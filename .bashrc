@@ -112,3 +112,12 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+# Remap exit to detach if tmux is running
+exit() {
+	if [[ -z $TMUX ]]; then
+		builtin exit
+	else
+		tmux detach
+	fi
+}

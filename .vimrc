@@ -20,11 +20,6 @@ set wrapmargin=0
 
 syntax enable
 
-"colors
-colorscheme default
-set t_Co=256
-set background=dark
-
 " Autoupdate Content
 set autoread
 
