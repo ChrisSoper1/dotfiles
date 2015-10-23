@@ -113,6 +113,11 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# Load custom PS1 prompt (if exists)
+if [ -f ~/.bash_prompt ]; then
+	. ~/.bash_prompt
+fi
+
 # Remap exit to detach if tmux is running
 exit() {
 	if [[ -z $TMUX ]]; then
