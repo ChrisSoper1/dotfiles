@@ -1,0 +1,17 @@
+#!/bin/bash
+#http://www.tldp.org/HOWTO/Bash-Prompt-HOWTO/x405.html
+FG_BLK="$(tput setaf 0)";BG_BLK="$(tput setab 0)"
+FG_RED="$(tput setaf 1)";BG_RED="$(tput setab 1)"
+FG_GRN="$(tput setaf 2)";BG_GRN="$(tput setab 2)"
+FG_YLW="$(tput setaf 3)";BG_YLW="$(tput setab 3)"
+FG_BLU="$(tput setaf 4)";BG_BLU="$(tput setab 4)"
+FG_PNK="$(tput setaf 5)";BG_PNK="$(tput setab 5)"
+FG_CYN="$(tput setaf 6)";BG_CYN="$(tput setab 6)"
+FG_GRY="$(tput setaf 7)";FG_GRY="$(tput setaf 7)"
+BOLD="$(tput bold)";DIM="$(tput dim)"
+UL_ON="$(tput smul)";UL_OFF="$(tput rmul)"
+RESET="$(tput sgr0)"
+
+## Example Prompt that turns red if previous command returns non-zero
+
+# PROMPT_COMMAND='PS1="\[\033[0;33m\][\!]\`if [[ \$? = "0" ]]; then echo "\\[\\033[32m\\]"; else echo "\\[\\033[31m\\]"; fi\`[\u.\h: \`if [[ `pwd|wc -c|tr -d " "` > 18 ]]; then echo "\\W"; else echo "\\w"; fi\`]\$\[\033[0m\] "; echo -ne "\033]0;`hostname -s`:`pwd`\007"'
