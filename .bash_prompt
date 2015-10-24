@@ -14,4 +14,36 @@ RESET="$(tput sgr0)"
 
 ## Example Prompt that turns red if previous command returns non-zero
 
+# \d   Date("Tue May 26"). 
+# \h   The hostname, up to the first . (e.g. deckard) 
+# \H   The hostname. (e.g. deckard.SS64.com)
+# \j   The number of jobs currently managed by the shell. 
+# \l   The basename of the tty name. 
+# \s   The name of the shell, the basename of $0 (the portion following 
+#      the final slash). 
+# \t   time 24-hour
+# \T   time 12-hour 
+# \@   time 12-hour am/pm
+# \u   username
+# \v   Bash version (e.g., 2.00) 
+# \V   Bash release (e.g., 2.00.0) 
+# \w   The current working directory. 
+# \W   The basename of $PWD. 
+# \!   The history number of this command. 
+# \#   The command number of this command. 
+# \$   "$" unless root, then "#"
+# \nnn   The character whose ASCII code is the octal value nnn. 
+# \n   A newline. 
+# \r   A carriage return. 
+# \e   An escape character (typically a color code). 
+# \a   A bell character.
+# \\   A backslash. 
+# \[   Begin a sequence of non-printing characters. (color escape sequences)
+#		     (Allows bash to calculate word wrapping correctly)
+# \]   End a sequence of non-printing characters.
+#
+
 # PROMPT_COMMAND='PS1="\[\033[0;33m\][\!]\`if [[ \$? = "0" ]]; then echo "\\[\\033[32m\\]"; else echo "\\[\\033[31m\\]"; fi\`[\u.\h: \`if [[ `pwd|wc -c|tr -d " "` > 18 ]]; then echo "\\W"; else echo "\\w"; fi\`]\$\[\033[0m\] "; echo -ne "\033]0;`hostname -s`:`pwd`\007"'
+if [[ -z $TMUX ]]; then
+	PS1='\[$UL_ON$FG_GRY$BOLD\]\[$BG_BLU\]|\h|\[$RESET\] \w\$ '
+fi
