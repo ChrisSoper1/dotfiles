@@ -12,7 +12,9 @@ BOLD="$(tput bold)";DIM="$(tput dim)"
 UL_ON="$(tput smul)";UL_OFF="$(tput rmul)"
 RESET="$(tput sgr0)"
 
-## Example Prompt that turns red if previous command returns non-zero
+# Unicode Symbols
+U_CHK=$'\u2713';U_XOUT=$'\u2715'
+U_FIN=$'\u0020'
 
 # \d   Date("Tue May 26"). 
 # \h   The hostname, up to the first . (e.g. deckard) 
@@ -41,9 +43,14 @@ RESET="$(tput sgr0)"
 # \[   Begin a sequence of non-printing characters. (color escape sequences)
 #		     (Allows bash to calculate word wrapping correctly)
 # \]   End a sequence of non-printing characters.
-#
 
+## Example Prompt that turns red if previous command returns non-zero
 # PROMPT_COMMAND='PS1="\[\033[0;33m\][\!]\`if [[ \$? = "0" ]]; then echo "\\[\\033[32m\\]"; else echo "\\[\\033[31m\\]"; fi\`[\u.\h: \`if [[ `pwd|wc -c|tr -d " "` > 18 ]]; then echo "\\W"; else echo "\\w"; fi\`]\$\[\033[0m\] "; echo -ne "\033]0;`hostname -s`:`pwd`\007"'
+
+## Example Newline Prompt Command
+#PS1='\n\[$FG_GRN\][\h] \[$U_XOUT$U_CHK\] \[$FG_YLW\]\w\[$RESET\]\n\$ '
+
 if [[ -z $TMUX ]]; then
 	PS1='\[$UL_ON$FG_GRY$BOLD\]\[$BG_BLU\]|\h|\[$RESET\] \w\$ '
 fi
+PS1='\n\[$UL_ON$FG_GRN\]\h\[$RESET\] \[$FG_YLW\]\w\[$RESET\]\n\$ '
