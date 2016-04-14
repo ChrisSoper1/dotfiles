@@ -2,6 +2,11 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+############################
+##  TO USE VI FOR VISUDO  ##
+############################
+# sudo update-alternatives --config editor
+
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
