@@ -1,7 +1,8 @@
 xterm*charClass: 33:48,35:48,37:48,43:48,45-47:48,64:48,95:48,126:48
 xterm*termName: xterm-color
 xterm*eightBitInput: false
-xterm*faceName: Liberation Mono for Powerline:size=10:antialias=false
+!xterm*faceName: Liberation Mono for Powerline:size=10:antialias=false
+xterm*faceName: Liberation Mono for Powerline:size=10
 !xterm*faceName: /home/csoper/.fonts/Literation Mono Powerline.ttf: Liberation Mono for Powerline,Literation Mono Powerline:style=Regular
 
 !BLK Cursor

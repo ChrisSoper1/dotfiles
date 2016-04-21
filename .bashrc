@@ -134,5 +134,16 @@ exit() {
 		tmux detach
 	fi
 }
+
+# Remap Caps Lock to CTL
+setxkbmap -option ctrl:nocaps
+
 export VISUAL=vim
 export EDITOR="$VISUAL"
+
+# Powerline
+export POWERLINEDIR=/usr/local/lib/python3.4/dist-packages/powerline
+if [ -d "/usr/local/lib/python3.4/dist-packages/powerline" ]; then
+	powerline-daemon -q
+	. /usr/local/lib/python3.4/dist-packages/powerline/bindings/bash/powerline.sh
+fi
