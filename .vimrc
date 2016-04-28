@@ -40,5 +40,5 @@ nnoremap Q <nop>
 
 "gVim specific commands
 if has('gui_running')
-	set guifont=Monaco:h16
+	"set guifont=Monaco:h16
 endif
