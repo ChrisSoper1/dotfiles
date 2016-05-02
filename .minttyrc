@@ -1,5 +1,5 @@
 FontHeight=10
-Font=Lucida Console
+Font=InputMono
 Term=xterm-256color
 Columns=110
 Rows=40
