@@ -1,9 +1,20 @@
+! rofi config (dmenu replacement)
+rofi.case-sensitive: false
+
+! xterm config
 xterm*charClass: 33:48,35:48,37:48,43:48,45-47:48,64:48,95:48,126:48
 xterm*termName: xterm-color
 xterm*eightBitInput: false
-!xterm*faceName: Liberation Mono for Powerline:size=10:antialias=false
-xterm*faceName: Liberation Mono for Powerline:size=10
-!xterm*faceName: /home/csoper/.fonts/Literation Mono Powerline.ttf: Liberation Mono for Powerline,Literation Mono Powerline:style=Regular
+xterm*faceName: InputMono:size=10
+
+! URxvt config
+URxvt*font:				xft:InputMono:size=10
+URxvt*transparent:		true
+URxvt*tintColor:		white
+URxvt*shading:			20
+URxvt*scrollBar:		false
+URxvt*scrollBar_right:	true
+
 
 !BLK Cursor
 #define _color0        #4f4f4f
@@ -37,6 +48,7 @@ xterm*faceName: Liberation Mono for Powerline:size=10
 #define _foreground    #f8f8f2
 #define _background    #2b3e50
 #define _cursorColor   #e3bf21
+
 URxvt*color0         : _color0
 URxvt*color1         : _color1
 URxvt*color2         : _color2
@@ -81,3 +93,5 @@ XTerm*colorUL        : _colorUL
 XTerm*foreground     : _foreground
 XTerm*background     : _background
 XTerm*cursorColor    : _cursorColor
+
+
