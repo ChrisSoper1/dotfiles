@@ -5,3 +5,7 @@ net-tools
 rofi
 i3wm
 i3blocks
+
+# WINE
+wine libportaudio2 cups-bsd ttf-mscorefonts-installer 
+wine-binfmt dosbox wine32-preloader 
