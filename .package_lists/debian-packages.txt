@@ -1,0 +1,7 @@
+# Utilities
+net-tools
+
+# Window Management
+rofi
+i3wm
+i3blocks
