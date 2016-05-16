@@ -2,10 +2,18 @@
 net-tools
 
 # Window Management
-rofi
-i3wm
-i3blocks
+	rofi
+	i3wm
+	i3blocks
 
 # WINE
-wine libportaudio2 cups-bsd ttf-mscorefonts-installer 
-wine-binfmt dosbox wine32-preloader 
+	wine libportaudio2 cups-bsd ttf-mscorefonts-installer 
+	wine-binfmt dosbox wine32-preloader 
+
+#Possible ROFI dependencies
+	libglib2.0-dev libxinerama-dev libxft-dev 
+	libpango1.0-dev libpangocairo-1.0-0 libcairo2-dev 
+	libx11-dev libstartup-notification0-dev libxkbcommon-dev 
+	libxkbcommon-x11-dev libxcb1-dev libxcb-xkb-dev 
+	libxcb-xinerama0-dev libx11-xcb-dev libxcb-util0-dev 
+	libxcb-ewmh-dev libxcb-icccm4-dev
