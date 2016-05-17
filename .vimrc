@@ -1,5 +1,6 @@
 "Line Numbering
 set number
+set relativenumber
 
 "Backspace Behavior (help 'backspace')
 set backspace=indent,eol,start
