@@ -7,7 +7,7 @@
 
 (session-info "toplevel"
     (factory-entry "gimp-empty-image-window")
-    (position 3838 136)
+    (position 2238 136)
     (size 737 430)
     (open-on-exit))
 (session-info "toplevel"
@@ -38,7 +38,7 @@
     (size 370 506))
 (session-info "toplevel"
     (factory-entry "gimp-toolbox-window")
-    (position 3520 1)
+    (position 1920 1)
     (size 224 1007)
     (open-on-exit)
     (gimp-toolbox
@@ -54,7 +54,7 @@
                     (show-button-bar "true"))))))
 (session-info "toplevel"
     (factory-entry "gimp-dock-window")
-    (position 5105 0)
+    (position 3586 0)
     (size 315 1007)
     (open-on-exit)
     (aux-info
