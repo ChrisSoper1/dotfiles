@@ -121,10 +121,11 @@ exit() {
 	fi
 }
 
-# Remap Caps Lock to CTL
-if [ -x /usr/bin/setxkbmap ]; then 
-	setxkbmap -option ctrl:nocaps
-fi
+## Remap Caps Lock to CTL
+## MOVED TO .xsession
+#if [ -x /usr/bin/setxkbmap ]; then 
+#	setxkbmap -option ctrl:nocaps
+#fi
 
 export VISUAL=vim
 export EDITOR="$VISUAL"
