@@ -1,2 +1,4 @@
-#!/bin/sh
-if [ -f "$HOME/.fehbg" ]; then; sh "${HOME}/.fehbg" &; fi
+#!/bin/bash
+if [ -f "$HOME/.fehbg" ]; then
+sh "${HOME}/.fehbg" &
+fi
