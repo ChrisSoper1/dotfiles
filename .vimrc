@@ -42,7 +42,25 @@ nmap \n :bnext! <CR>
 "Remove Ex mode
 nnoremap Q <nop>
 
-"gVim specific commands
-if has('gui_running')
-	"set guifont=Monaco:h16
-endif
+" plug.vim package manager configuration
+call plug#begin('~/.vim/plugged')
+
+" Tmux pane motion integration
+Plug 'christoomey/vim-tmux-navigator'
+" Syntax highlighting for json
+Plug 'elzr/vim-json', { 'for' : 'json' }
+" Syntax highlighting for html5
+Plug 'othree/html5.vim', { 'for' : 'html' }
+" Monokai color scheme (brown)
+Plug 'tomasr/molokai'
+" Syntax coloring for markdown
+Plug 'tpope/vim-markdown', { 'for' : ['md', 'markdown'] }
+" Syntax highlighting for javascript
+Plug 'pangloss/vim-javascript', { 'for' : ['js', 'javascript'] }
+
+" Plug 'scrooloose/nerdcommenter'
+" Plug 'majutsushi/tagbar'
+" Plug 'bling/vim-airline'
+" Plug 'scrooloose/syntastic'
+" Plug 'itchyny/lightline.vim'
+call plug#end()
