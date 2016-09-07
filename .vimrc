@@ -42,6 +42,10 @@ nmap \n :bnext! <CR>
 "Remove Ex mode
 nnoremap Q <nop>
 
+"Keybinds
+"Autoindent file
+nmap <F7> mzgg=G`z 
+
 " plug.vim package manager configuration
 call plug#begin('~/.vim/plugged')
 
