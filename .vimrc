@@ -1,6 +1,6 @@
 "Line Numbering
 set number
-set relativenumber
+"set relativenumber
 syntax enable
 
 "Backspace Behavior (help 'backspace')
