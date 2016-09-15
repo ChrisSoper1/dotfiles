@@ -1,6 +1,6 @@
 alias tmuxlist='tmux list-sessions'
 alias tmuxattach='tmux attach-session -t'
 alias vi='vim'
-alias sudo='sudo -E'
+alias sudo='sudo -E '
 alias svi='sudoedit'
 alias duh='du -h --max-depth=1'
