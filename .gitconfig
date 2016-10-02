@@ -3,3 +3,5 @@
 	email = ChrisSoper1@gmail.com
 [push]
 	default = simple
+[core]
+	excludesfile = C:\\Users\\Chris\\.gitignore_global
