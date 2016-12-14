@@ -113,19 +113,14 @@ if ! shopt -oq posix; then
 fi
 
 # Remap exit to detach if tmux is running
-exit() {
-	if [[ -z $TMUX ]]; then
-		builtin exit
-	else
-		tmux detach
-	fi
-}
-
-## Remap Caps Lock to CTL
-## MOVED TO .xsession
-#if [ -x /usr/bin/setxkbmap ]; then 
-#	setxkbmap -option ctrl:nocaps
-#fi
+# Disabled for now (tired of re-attaching to kill session)
+#exit() {
+#	if [[ -z $TMUX ]]; then
+#		builtin exit
+#	else
+#		tmux detach
+#	fi
+#}
 
 export VISUAL=vim
 export EDITOR="$VISUAL"
