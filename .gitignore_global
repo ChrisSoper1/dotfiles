@@ -1,1 +1,36 @@
+symfony.bat
+clearcache.php
+auth.json
+api_tests.php
+/MultiHost/**
+
+# IDE Folders
+.idea/*
+.vagrant/*
+
+# Temporary and Binary files
+Thumbs.db
+*.orig
 *.swp
+*.*~
+*.obj
+*.exe
+*.pdb
+*.user
+*.aps
+*.pch
+*.vspscc
+*_i.c
+*_p.c
+*.ncb
+*.suo
+*.tlb
+*.tlh
+*.bak
+*.cache
+*.ilk
+*.log
+*.dll
+*.lib
+*.sbr
+appaoc.pdf

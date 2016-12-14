@@ -4,4 +4,9 @@
 [push]
 	default = simple
 [core]
-	excludesfile = C:\\Users\\Chris\\.gitignore_global
+	excludesfile = C:\\Users\\csoper\\.gitignore_global
+[difftool "sourcetree"]
+	cmd = 'C:/Program Files/KDiff3/kdiff3.exe' \"$LOCAL\" \"$REMOTE\"
+[mergetool "sourcetree"]
+	cmd = 'C:/Program Files/KDiff3/kdiff3.exe' \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
+	trustExitCode = true
