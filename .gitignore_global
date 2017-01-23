@@ -34,3 +34,4 @@ Thumbs.db
 *.lib
 *.sbr
 appaoc.pdf
+app/config/config_local.yml
