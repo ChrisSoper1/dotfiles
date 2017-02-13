@@ -4,5 +4,5 @@
 [push]
 	default = simple
 [core]
-	excludesfile = C:\\Users\\Chris\\.gitignore_global
+	excludesfile = ~/.gitignore_global
 	fileMode = false
