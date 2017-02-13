@@ -6,3 +6,4 @@
 [core]
 	excludesfile = ~/.gitignore_global
 	fileMode = false
+	autocrlf = input
