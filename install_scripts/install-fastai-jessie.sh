@@ -1,10 +1,20 @@
 #!/bin/bash
 
+exportpath() {
+# Add Anaconda to PATH
+export PATH="$PATH:$HOME/anaconda2/bin"
+cat <<EOF >>  $HOME/.profile
+# Added `date` by install-fastai.sh
+export PATH="\$PATH:$HOME/anaconda2/bin"
+EOF
+}
+exportpath
+exit
+
 CUDA_INSTALLER="https://developer.nvidia.com/compute/cuda/8.0/Prod2/local_installers/cuda_8.0.61_375.26_linux-run"
 ANACONDA_INSTALLER="https://repo.continuum.io/archive/Anaconda2-4.2.0-Linux-x86_64.sh" 
 CUDNN_TARBALL="http://platform.ai/files/cudnn.tgz"
 
-install() {
 # Install pre-requisite dependencies
 sudo apt update
 sudo apt install -yyq tmux build-essential gcc g++ make binutils
@@ -13,13 +23,6 @@ sudo apt install -yyq software-properties-common nvidia-smi
 # Install Anaconda2
 wget $ANACONDA_INSTALLER -O /tmp/anaconda2-install.sh
 bash /tmp/anaconda2-install.sh -b
-
-# Add Anaconda to PATH
-export PATH="$PATH:$HOME/anaconda2/bin"
-cat <<EOF >>  $HOME/.profile
-# Added `date` by install-fastai.sh
-export PATH="$PATH:$HOME/anaconda2/bin"
-EOF
 
 # Download the cuda SDK installer
 wget $CUDA_INSTALLER -O /tmp/cuda-install.sh
@@ -56,7 +59,6 @@ cat <<EOF > $HOME/.keras/keras.json
 	"backend": "theano"
 }
 EOF
-}
 
 # Install cudnn libraries
 wget $CUDNN_TARBALL -O /tmp/cudnn.tgz
