@@ -37,6 +37,10 @@ let &t_SI.="\e[5 q"
 let &t_EI.="\e[1 q"
 let &t_te.="\e[0 q"
 
+" Configure ListChars (use ':set list' to toggle)
+set listchars=eol:¬,tab:>·,nbsp:•,trail:•
+
+
 " Backspace behavior (help 'backspace')
 set backspace=indent,eol,start
 
@@ -60,6 +64,7 @@ nnoremap <Leader>w :w<CR>
 nnoremap <Leader>h :noh<CR>
 nnoremap <Leader>t :tabn<CR>
 nnoremap <Leader>n :bnext!<CR>
+nnoremap <Leader>l :set list! list?<CR>
 nnoremap Q <nop>
 
 nmap <Leader>y "+y
