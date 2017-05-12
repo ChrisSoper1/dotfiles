@@ -20,6 +20,13 @@ installapt() {
 	sudo apt install -yyq software-properties-common nvidia-smi
 }
 
+removeolddrivers() {
+	dpkg -l | \
+		grep nvidia | \
+		awk '{print $2}' | \
+		sed -e ':a' -e 'N' -e '$!ba' -e 's/\n/ /g'
+}
+
 installconda() {
 	# Install Anaconda2
 	wget $ANACONDA_INSTALLER -O /tmp/anaconda2-install.sh
@@ -106,4 +113,5 @@ else
 	printf "\tinstallconda\n"
 	printf "\tinstallcondalibs\n"
 	printf "\tconfigurejupyter\n"
+	printf "\tremoveolddrivers\n"
 fi
