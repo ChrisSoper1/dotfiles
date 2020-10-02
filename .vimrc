@@ -1,15 +1,26 @@
 " Line numbering
 set number
+"set relativenumber
 
 " Syntax highlighting
 syntax enable
+colorscheme desert
+
+" Auto-create folds according to syntax rules
+set foldmethod=syntax
+
+" Open folds when file is loaded
+set foldlevel=10
 
 " Line wrapping
-set nowrap 
-set textwidth=0 
+set nowrap
+set textwidth=0
 set wrapmargin=0
 
-" Autoupdate when file is changed externally
+" Convert tabs to spaces
+set expandtab
+
+" auto-update when file is changed externally
 set autoread
 
 " Search options
@@ -18,8 +29,15 @@ set hlsearch
 set showmatch
 set ignorecase
 
+" Toggle Paste mode (no autoindent) with F2
+set pastetoggle=<F2>
+
 " Always show statusbar
 set laststatus=2
+
+" Enable mouse support
+set mouse=a
+set ttymouse=xterm2
 
 " Enable mouse support
 set mouse=a
@@ -32,14 +50,13 @@ scriptencoding utf-8
 let mapleader = "\<space>"
 
 " Use block cursor in cygwin/mintty
-let &t_ti.="\e[1 q"
-let &t_SI.="\e[5 q"
-let &t_EI.="\e[1 q"
-let &t_te.="\e[0 q"
+"let &t_ti.="\e[1 q"
+"let &t_SI.="\e[5 q"
+"let &t_EI.="\e[1 q"
+"let &t_te.="\e[0 q"
 
 " Configure ListChars (use ':set list' to toggle)
 set listchars=eol:¬,tab:>·,nbsp:•,trail:•
-
 
 " Backspace behavior (help 'backspace')
 set backspace=indent,eol,start
@@ -51,11 +68,20 @@ set shiftwidth=4  " Automatic Indentation and using '<' or '>'
 
 " Filetype to file extension mappings
 au BufNewFile,BufRead,BufReadPost *.ts set filetype=javascript
+au BufNewFile,BufRead,BufReadPost *.scss set filetype=scss
+au BufNewFile,BufRead,BufReadPost *.coffee set filetype=coffeescript
+au BufNewFile,BufRead,BufReadPost *.svg set filetype=xml
+au BufNewFile,BufRead,BufReadPost *.yaml set filetype=yaml
+au BufNewFile,BufRead,BufReadPost *.yml set filetype=yaml
 
 " Per-Filetype overrides
-au FileType html set tabstop=2|set shiftwidth=2|set softtabstop=2
-au FileType css set tabstop=2|set shiftwidth=2|set softtabstop=2
-au FileType javascript set tabstop=2|set shiftwidth=2|set softtabstop=2
+au FileType html set ts=2|set sw=2|set sts=2
+au FileType css set ts=2|set sw=2|set sts=2
+au FileType scss set ts=2|set sw=2|set sts=2
+au FileType javascript set ts=2|set sw=2|set sts=2
+au FileType typescript set ts=2|set sw=2|set sts=2
+au FileType coffeescript set ts=2|set sw=2|set sts=2
+au FileType yaml set ts=2|set sw=2|set sts=2
 
 " Keybindings 
 " Keymap syntax: [mode][nore]map
@@ -67,6 +93,7 @@ nnoremap <Leader>n :bnext!<CR>
 nnoremap <Leader>l :set list! list?<CR>
 nnoremap Q <nop>
 
+nmap <Leader>n :NERDTreeToggle<CR>
 nmap <Leader>y "+y
 vmap <Leader>y "+y
 nmap <Leader>d "+d
@@ -80,22 +107,18 @@ vmap <Leader>P "+P
 call plug#begin('~/.vim/plugged')
 
 " Utilities
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'itchyny/lightline.vim'
-Plug 'scrooloose/nerdcommenter'
+Plug 'preservim/nerdtree'
 
 " Syntax highlighting
+Plug 'othree/html5.vim', { 'for': ['html'] } " HTML
 Plug 'elzr/vim-json', { 'for' : 'json' } " JSON
-Plug 'othree/html5.vim', { 'for' : 'html' } " HTML5 Tags
-Plug 'wannesm/wmgraphviz.vim', { 'for' : ['gv', 'dot'] } " Graphviz
 Plug 'tpope/vim-markdown', { 'for' : ['md', 'markdown'] } " Markdown
-Plug 'pangloss/vim-javascript', { 'for' : ['js', 'javascript'] } " Javascript
-Plug 'Matt-Deacalion/vim-systemd-syntax' " Systemd
-
-" Color schemes
-Plug 'tomasr/molokai'
-Plug 'altercation/vim-colors-solarized'
+Plug 'JulesWang/css.vim', { 'for' : ['css', 'scss', 'sass'] } " css
+Plug 'cakebaker/scss-syntax.vim', { 'for' : ['scss'] } " scss
+Plug 'pangloss/vim-javascript', { 'for' : ['html', 'js', 'javascript'] } " Javascript
+Plug 'Matt-Deacalion/vim-systemd-syntax', { 'for' : ['service', 'unit', 'socket', 'target'] } " Systemd
+Plug 'kchmck/vim-coffee-script', { 'for': ['coffee','coffeescript'] } " Coffeescript
+Plug 'leafgarland/typescript-vim', { 'for': ['ts','typescript'] } " Typescript
+Plug 'wannesm/wmgraphviz.vim', { 'for' : ['gv', 'dot'] } " Graphviz
 
 call plug#end()
-
-let g:lightline = { 'colorscheme': 'wombat' }
